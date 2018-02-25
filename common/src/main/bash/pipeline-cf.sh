@@ -297,6 +297,10 @@ function setEnvVar() {
 
 function restartApp() {
 	local appName="${1}"
+
+	echo "Scaling the app memory to 512M"
+	"${CF_BIN}" scale "${appName}" -m 512M
+
 	echo "Restarting app with name [${appName}]"
 	"${CF_BIN}" restart "${appName}"
 }

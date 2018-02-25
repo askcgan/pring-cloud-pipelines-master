@@ -1,9 +1,9 @@
 ---
 applications:
 - name: github-eureka
+  memory: 512M
   services:
     - github-rabbitmq
-  memory: 512M
   env:
     SPRING_PROFILES_ACTIVE: cloud
     DEBUG: "true"
